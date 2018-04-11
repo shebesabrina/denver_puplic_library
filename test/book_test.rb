@@ -1,6 +1,5 @@
 require './test/test_helper'
 require './lib/book'
-require "./lib/author"
 
 class BookTest < Minitest::Test
   attr_reader :book
