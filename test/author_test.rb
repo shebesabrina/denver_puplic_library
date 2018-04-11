@@ -25,6 +25,6 @@ class AuthorTest < Minitest::Test
 
   def test_add_books_to_array
     result = charlotte_bronte.add_book("Jane Eyre", "October 16, 1847")
-    assert_equal "Jane Eyre", result.first.name
+    assert_equal "Jane Eyre", result.first.title
   end
 end
