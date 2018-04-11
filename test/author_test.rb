@@ -1,6 +1,7 @@
 require './test/test_helper'
 require './lib/author'
 require './lib/book'
+require './lib/library'
 
 class AuthorTest < Minitest::Test
   attr_reader :charlotte_bronte
@@ -26,5 +27,18 @@ class AuthorTest < Minitest::Test
   def test_add_books_to_array
     result = charlotte_bronte.add_book("Jane Eyre", "October 16, 1847")
     assert_equal "Jane Eyre", result.first.title
+  end
+
+  def test_it_can_add_another_book_to_array
+    result = charlotte_bronte.add_book("Villette", "1853")
+    assert_equal "Villette", result.first.title
+  end
+
+  def test_both_books_are_in_array
+   jane_eyre = charlotte_bronte.add_book("Jane Eyre", "October 16, 1847")
+   villette  = charlotte_bronte.add_book("Villette", "1853")
+
+   assert_equal "Jane Eyre", jane_eyre.first.title
+   assert_equal "Villette", villette.last.title
   end
 end
