@@ -10,6 +10,4 @@ class Book
     @title = argument[:title]
     @publication_date = argument[:publication_date]
   end
-
-
 end
